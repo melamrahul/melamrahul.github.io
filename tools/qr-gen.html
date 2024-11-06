@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding for the HTML document -->
+    <meta charset="UTF-8">
+
+    <!-- Page title -->
+    <title>Easy QR Code - Generate & Download</title>
+
+    <!-- Viewport settings for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Description of the page for search engines -->
+    <meta name="description"
+        content="Generate and download QR codes instantly by entering Text or URL. Simple and user-friendly QR code generator with download options.">
+
+    <!-- Author of the page -->
+    <meta name="author" content="Rahul">
+
+    <!-- Keywords for SEO -->
+    <meta name="keywords"
+        content="QR code generator, download QR code, create QR code, QR code for text, QR code download, online QR code generator">
+
+    <!-- Favicon link (optional, replace with the actual path to your favicon) -->
+    <link rel="icon" href="https://img.freepik.com/premium-vector/qr-code-icon_946691-780.jpg" type="image/x-icon">
+
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Easy QR Code - Generate & Download">
+    <meta property="og:description"
+        content="Quickly generate and download QR codes for your text input. Perfect for sharing information easily!">
+    <meta property="og:image" content="https://img.freepik.com/premium-vector/qr-code-icon_946691-780.jpg">
+    <meta property="og:url" content="https://melamrahul.github.io/tools/qr-gen">
+    <meta property="og:type" content="website">
+    <meta property="site_name" content="Melam Rahul">
+
+
+    <!-- Twitter Card meta tags for Twitter sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Easy QR Code - Generate & Download">
+    <meta name="twitter:description"
+        content="Convert your text into a QR code and download it instantly by entering Text or URL. Simple, fast, and free QR code generator.">
+    <meta name="twitter:image" content="https://img.freepik.com/premium-vector/qr-code-icon_946691-780.jpg">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS styling -->
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f5f5f5;
+            color: #333;
+            align-items: center;
+            justify-content: center;
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            padding-top: 50px;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h6 {
+            font-size: 14px;
+            margin-top: 5px;
+            color: #888;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            width: 90%;
+            border: 5px solid #688;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #qrcode {
+            margin-top: 25px;
+        }
+
+        #qrcode img {
+            border: 10px solid white;
+        }
+
+        #downloadBtn {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .clearxt {
+            display: none;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+
+        <!-- "by Rahul" text -->
+        <h6>Generate and Download</h6>
+
+        <!-- Input field for text -->
+        <input type="text" id="qrInput" placeholder="Enter Text to Convert to QR Code">
+
+        <!-- Button to generate QR code -->
+        <button onclick="generateQR()">Generate QR Code</button>
+
+        <!-- Display generated QR code -->
+        <div id="qrcode" style="display: flex; justify-content: center; margin-left: 30%;"></div>
+
+        <!-- Download button for the generated QR code -->
+        <button id="downloadBtn" onclick="downloadQR()">Download QR Code</button>
+
+        <!-- Clear button to remove the generated QR code and clear input field -->
+        <button id="clearButton" style="background: none; border: none; cursor: pointer; color: #188;"
+            onclick="clearQR()">Clear</button>
+            <button id="clearButton" style="background: none; border: none; cursor: pointer; color: #188;"
+            onclick="window.location.href='https://razorpay.com/payment-button/pl_NxfbmRQ4Y7J9El/view'">
+        Donate
+    </button>    
+    </div>
+    <footer
+        style="position: fixed; bottom: 0.5rem; width: 100%; background-color: white; color: #333; text-align: center; padding: 0.5rem 0; box-shadow: 0 -0.0625rem 0.3125rem rgba(0, 0, 0, 0.1);">
+        <p style="margin: 0; font-size: 1.0625rem;">
+            &copy; Designed with &hearts; by <a href="/profile"
+                style="text-decoration: underline; color: #197afe;">M.Rahul</a>
+        </p>
+    </footer>
+
+    <!-- QR Code generation script -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script>
+        var qr;
+
+        function generateQR() {
+            var qrInput = document.getElementById('qrInput').value;
+            var qrCodeDiv = document.getElementById('qrcode');
+            var downloadBtn = document.getElementById('downloadBtn');
+
+            // Clear previous QR code if any
+            qrCodeDiv.innerHTML = '';
+
+            // Generate QR code
+            qr = new QRCode(qrCodeDiv, {
+                text: qrInput,
+                width: 256,
+                height: 256
+            });
+
+            // Show generated QR code
+            qrCodeDiv.style.display = 'block';
+
+            // Show download button after generating QR code
+            downloadBtn.style.display = 'inline-block';
+        }
+
+        function downloadQR() {
+            if (!qr) {
+                alert("Please generate a QR code first.");
+                return;
+            }
+
+            var qrCodeCanvas = document.getElementById('qrcode').querySelector('canvas');
+
+            // Create a new canvas to apply the border before downloading
+            var canvasWithBorder = document.createElement('canvas');
+            var ctx = canvasWithBorder.getContext('2d');
+            canvasWithBorder.width = qrCodeCanvas.width + 20; // Add 20px for the 10px border on each side
+            canvasWithBorder.height = qrCodeCanvas.height + 20;
+
+            // Apply the border
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvasWithBorder.width, canvasWithBorder.height);
+            ctx.drawImage(qrCodeCanvas, 10, 10);
+
+            // Create a download link for the modified QR code canvas
+            var downloadLink = document.createElement('a');
+            downloadLink.href = canvasWithBorder.toDataURL('image/png');
+            downloadLink.download = 'qrcode.png';
+            downloadLink.click();
+        }
+
+        function clearQR() {
+            var qrCodeDiv = document.getElementById('qrcode');
+            var downloadBtn = document.getElementById('downloadBtn');
+            var qrInput = document.getElementById('qrInput');
+
+            // Clear generated QR code
+            qrCodeDiv.innerHTML = '';
+
+            // Hide download button
+            downloadBtn.style.display = 'none';
+
+            // Clear input field
+            qrInput.value = '';
+        }
+    </script>
+  <script>
+        // Disable right-click context menu
+        document.oncontextmenu = function () {
+            return false;
+        };
+
+        // Disable certain key combinations
+        document.onkeydown = function (e) {
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        };
+        localStorage.clear();
+    </script>
+</body>
+
+</html>
