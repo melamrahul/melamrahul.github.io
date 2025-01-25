@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free and easy-to-use background remover tool. Remove the background from images instantly with AI-powered precision.">
+    <meta name="keywords" content="rahul, by rahul, melam, rahul, tool, by rahul, remove, remove.bg, bg, remove background remover, remove background, image editing, free online tool, AI image editing">
+    <meta name="author" content="Melam Rahul">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:title" content=">Background Remover- 100% Free Tool by Rahul">
+    <meta property="og:description" content="Instantly remove the background from any image with our free online tool. No software needed.">
+    <meta property="og:image" content="https://i.ibb.co/qMR5Ndf/me.png">
+    <meta property="og:url" content="https://melamrahul.github.io/tools/remove_bg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="https://i.ibb.co/qMR5Ndf/me.png">
+    <meta name="twitter:title" content=">Background Remover- 100% Free Tool by Rahul">
+    <meta name="twitter:description" content="Instantly remove the background from any image with our free online tool. No software needed.">
+    <meta name="twitter:image" content="https://i.ibb.co/qMR5Ndf/me.png"
+    <title>Background Remover- 100% Free Tool by Rahul</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .circle-loader {
+            border: 8px solid #eee; /* Light grey */
+            border-top: 8px solid #007bff; /* Blue */
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 0.4s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <div class="circle-loader"></div>
+    </div>
+    <iframe id="contentFrame" src="https://ephemeral-hummingbird-dcb797.netlify.app/" alt="Background Remover Tool"></iframe>
+
+    <script>
+        const iframe = document.getElementById('contentFrame');
+        const loader = document.getElementById('loader');
+
+        // Show iframe only when it's fully loaded
+        iframe.onload = () => {
+            loader.style.display = 'none'; // Hide the loader
+            iframe.style.display = 'block'; // Show the iframe
+        };
+    </script>
+</body>
+</html>
