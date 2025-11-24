@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+
+  <!-- Primary immediate redirect (meta refresh) -->
+  <meta http-equiv="refresh" content="0; url='https://melamrahul.github.io/tools/qr_gen'" />
+
+  <script>
+    // Faster and avoids adding a history entry
+    window.location.replace("https://melamrahul.github.io/tools/qr_gen");
+  </script>
+</head>
+<body>
+  <noscript>
+    <p>If you are not redirected automatically,
+       <a href="https://melamrahul.github.io/tools/qr_gen">click here</a>.
+    </p>
+  </noscript>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!-- Character encoding for the HTML document -->
     <meta charset="UTF-8">
 
-    <!-- Page title -->
     <title>Easy QR Code - Generate & Download</title>
 
-    <!-- Viewport settings for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Description of the page for search engines -->
     <meta name="description"
         content="Generate and download QR codes instantly by entering Text or URL. Simple and user-friendly QR code generator with download options.">
 
-    <!-- Author of the page -->
     <meta name="author" content="Rahul">
 
-    <!-- Keywords for SEO -->
     <meta name="keywords"
         content="QR code generator, download QR code, create QR code, QR code for text, QR code download, online QR code generator">
 
-    <!-- Favicon link (optional, replace with the actual path to your favicon) -->
     <link rel="icon" href="https://img.freepik.com/premium-vector/qr-code-icon_946691-780.jpg" type="image/x-icon">
 
-    <!-- Open Graph meta tags for social media sharing -->
     <meta property="og:title" content="Easy QR Code - Generate & Download">
     <meta property="og:description"
         content="Quickly generate and download QR codes for your text input. Perfect for sharing information easily!">
@@ -35,17 +51,14 @@
     <meta property="site_name" content="Melam Rahul">
 
 
-    <!-- Twitter Card meta tags for Twitter sharing -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Easy QR Code - Generate & Download">
     <meta name="twitter:description"
         content="Convert your text into a QR code and download it instantly by entering Text or URL. Simple, fast, and free QR code generator.">
     <meta name="twitter:image" content="https://img.freepik.com/premium-vector/qr-code-icon_946691-780.jpg">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- CSS styling -->
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
@@ -138,22 +151,16 @@
     <div class="container">
         <h1>QR Code Generator</h1>
 
-        <!-- "by Rahul" text -->
         <h6>Generate and Download</h6>
 
-        <!-- Input field for text -->
         <input type="text" id="qrInput" placeholder="Enter Text to Convert to QR Code">
 
-        <!-- Button to generate QR code -->
         <button onclick="generateQR()">Generate QR Code</button>
 
-        <!-- Display generated QR code -->
         <div id="qrcode" style="display: flex; justify-content: center; margin-left: 00%;"></div>
 
-        <!-- Download button for the generated QR code -->
         <button id="downloadBtn" onclick="downloadQR()">Download QR Code</button>
 
-        <!-- Clear button to remove the generated QR code and clear input field -->
         <button id="clearButton" style="background: none; border: none; cursor: pointer; color: #188;"
             onclick="clearQR()">Clear</button>
             <button id="clearButton" style="background: none; border: none; cursor: pointer; color: #188;"
@@ -169,7 +176,6 @@
         </p>
     </footer>
 
-    <!-- QR Code generation script -->
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script>
         var qr;
@@ -259,4 +265,4 @@
     </script>
 </body>
 
-</html>
+</html> -->
