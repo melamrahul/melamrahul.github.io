@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.rahul.personalai",
+      "sha256_cert_fingerprints": [
+        "D1:E9:9F:52:08:90:6C:52:F6:E4:19:FD:D2:14:92:CD:B4:2D:B5:33"
+      ]
+    }
+  }
+]
