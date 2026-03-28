@@ -214,10 +214,10 @@
          <nav class="nav pt-1.5 pb-2 flex items-center justify-between relative flex-nowrap babymamabear:py-1.5
             babybear:flex-wrap 
             nav--minified-mobile " aria-label="Primary">
-            <div class="nav-logo--inbug flex items-center text-color-brand papabear:hidden mamabear:hidden lazy-loaded"
+            <div class="nav-logo--inbug flex items-center text-color-brand lazy-loaded"
                style="margin-top: -10px">
                <img src="https://melamrahul.github.io/assets/profile/logo.png"
-                  alt="Profile Image" class="mr-2" width="50" height="50">
+                  alt="Profile Image" class="mr-2" width="40" height="40">
                <div class="name-container">M.Rahul</div>
             </div>
          </nav>
@@ -1176,10 +1176,10 @@
           var iconImage = document.getElementById('contents-icon-image');
           if (contents.style.display === 'none') {
               contents.style.display = 'block';
-              iconImage.src = 'https://melamrahul.github.io/assets/profile/menu-open.png';
+              iconImage.src = 'https://melamrahul.github.io/assets/profile/menu-close.png';
           } else {
               contents.style.display = 'none';
-              iconImage.src = 'https://melamrahul.github.io/assets/profile/menu-close.png';
+              iconImage.src = 'https://melamrahul.github.io/assets/profile/menu-open.png';
           }
       }
       
@@ -1218,4 +1218,15 @@
       };
       localStorage.clear();
    </script>
+   <script>
+    fetch("https://espenkzyytzcmbcadskw.supabase.co/rest/v1/rpc/profile",{
+    method:"POST",
+    headers:{
+    "apikey":"sb_publishable_rqkj6tchkEuQCi7mlK--pw_8fpi2G4n",
+    "Authorization":"Bearer sb_publishable_rqkj6tchkEuQCi7mlK--pw_8fpi2G4n",
+    "Content-Type":"application/json"
+    },
+    body:JSON.stringify({row_id:2})
+    });
+</script>
 </html>
