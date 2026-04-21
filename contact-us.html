@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Ruvs Tools</title>
+    <meta name="description"
+        content="Contact Ruvs Tools for support, feedback, or inquiries. We are here to help you with our free YouTube to MP3 and MP4 converter.">
+    <meta name="keywords" content="ruvs tools contact, ruvs tools support, contact us, feedback">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Rahul">
+    <meta name="theme-color" content="#080808">
+    <link rel="canonical" href="https://ruvs.in/apps/contact">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Us — Ruvs Tools">
+    <meta property="og:description"
+        content="Contact Ruvs Tools for support, feedback, or inquiries. We are here to help.">
+    <meta property="og:url" content="https://ruvs.in/apps/contact">
+    <meta property="og:site_name" content="Ruvs Tools">
+    <meta property="og:image" content="https://ruvs.in/resos/common/icons/ruvs-icon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us — Ruvs Tools">
+    <meta name="twitter:description"
+        content="Contact Ruvs Tools for support, feedback, or inquiries. We are here to help.">
+    <meta name="twitter:image" content="https://ruvs.in/resos/common/icons/ruvs-icon.png">
+
+    <script src="https://ruvs.in/resos/common/scripts/sentinel.js" defer=""></script>
+    <link rel="stylesheet" href="https://ruvs.in/resos/paint/tools/youtube/index.v3.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="https://ruvs.in/resos/common/icons/ruvs-icon.png">
+    <link rel="apple-touch-icon" href="https://ruvs.in/resos/common/icons/ruvs-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="dns-prefetch" href="https://ruvs.in">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+/* Contact Page Custom Responsive Styling */
+
+body{
+    margin:0;
+    padding:0;
+}
+
+.contact-wrapper{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.contact-box{
+    width:100%;
+    max-width:600px;
+    background:#ffffff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.contact-title{
+    font-size:32px;
+    font-weight:700;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.contact-subtitle{
+    text-align:center;
+    margin-bottom:30px;
+    opacity:0.75;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    font-size:15px;
+}
+
+.form-control{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+    transition:0.2s;
+}
+
+.form-control:focus{
+    border-color:#4f46e5;
+}
+
+textarea.form-control{
+    min-height:100px;
+    resize:vertical;
+}
+
+.btn-submit{
+    width:100%;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    background:#111827;
+    color:#fff;
+    transition:0.3s;
+}
+
+.btn-submit:hover{
+    opacity:0.9;
+}
+
+.alert{
+    padding:14px;
+    border-radius:10px;
+    margin-bottom:20px;
+    font-size:15px;
+}
+
+.alert-success{
+    background:#ecfdf5;
+    color:#065f46;
+}
+
+.alert-error{
+    background:#fef2f2;
+    color:#991b1b;
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .contact-wrapper{
+        padding:14px;
+        align-items:flex-start;
+        padding-top:30px;
+    }
+
+    .contact-box{
+        padding:22px;
+        border-radius:14px;
+    }
+
+    .contact-title{
+        font-size:26px;
+    }
+
+    .form-control{
+        font-size:15px;
+        padding:13px;
+    }
+
+    .btn-submit{
+        padding:14px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width:1200px){
+    .contact-box{
+        max-width:760px;
+        padding:45px;
+    }
+
+    .contact-title{
+        font-size:36px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="contact-wrapper">
+
+    <div class="contact-box">
+
+        <div class="contact-title">Contact Us - ruvs.in</div>
+        <div class="contact-subtitle">
+            We'd love to hear from you. Send us your message anytime.
+        </div>
+
+        <div id="response-msg"></div>
+
+        <form id="contactForm">
+
+            <input type="hidden" name="access_key" value="22c85f4d-14c7-42eb-8d6c-de43eda0ba43">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Your Message</label>
+                <textarea name="message" class="form-control" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <div class="h-captcha" data-captcha="true"></div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+                Send Comment
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
+
+<script>
+const form = document.getElementById("contactForm");
+const msg = document.getElementById("response-msg");
+const btn = document.getElementById("submitBtn");
+
+form.addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    // Disable button
+    btn.disabled = true;
+    btn.innerHTML = "Sending Comment...";
+    btn.style.opacity = "0.7";
+    btn.style.cursor = "not-allowed";
+
+    msg.style.display = "none";
+
+    const formData = new FormData(form);
+    const json = Object.fromEntries(formData.entries());
+
+    try {
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(json)
+        });
+
+        const data = await response.json();
+
+        if(data.success){
+
+            msg.className = "alert alert-success";
+            msg.style.display = "block";
+            msg.innerHTML = `
+                <div style="font-size:40px;margin-bottom:10px;">✅</div>
+                <strong>Thank You!</strong><br>
+                We have received your comment successfully.
+            `;
+
+            form.reset();
+            form.style.display = "none";
+
+            if(window.hcaptcha){
+                hcaptcha.reset();
+            }
+
+        } else {
+
+            msg.className = "alert alert-error";
+            msg.style.display = "block";
+            msg.innerHTML = data.message || "Failed to send comment.";
+        }
+
+    } catch(error){
+
+        msg.className = "alert alert-error";
+        msg.style.display = "block";
+        msg.innerHTML = "Something went wrong. Please try again.";
+
+    }
+
+    // Enable button again
+    btn.disabled = false;
+    btn.innerHTML = "Send Comment";
+    btn.style.opacity = "1";
+    btn.style.cursor = "pointer";
+
+});
+</script>
+
+</body>
+</html>
