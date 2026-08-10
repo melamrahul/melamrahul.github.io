@@ -914,16 +914,21 @@
     //     document.getElementById('contact-info-dialog').style.display = 'block';
     // });
 
-    document.getElementById('call-button').addEventListener('click', function () {
-
-        // Close the dialog box after calling
-        closeDialog();
-    });
+    var callButton = document.getElementById('call-button');
+    if (callButton) {
+        callButton.addEventListener('click', function () {
+            // Close the dialog box after calling
+            closeDialog();
+        });
+    }
 
     // Close the dialog box when clicking outside of it
-    document.getElementById('overlay').addEventListener('click', function () {
-        closeDialog();
-    });
+    var overlayEl = document.getElementById('overlay');
+    if (overlayEl) {
+        overlayEl.addEventListener('click', function () {
+            closeDialog();
+        });
+    }
 
     function closeDialog() {
         // Hide the overlay and dialog box
@@ -1082,8 +1087,16 @@
         // Remove loading class from body to reveal contents
         document.body.classList.remove('loading');
         // Show the contents
-    }, 3000);
+    }, 200);
     localStorage.clear();
+</script>
+<script>
+    // Safety net: force-hide preloader even if another script errors
+    setTimeout(function () {
+        var pre = document.querySelector('.preloader');
+        if (pre) pre.style.display = 'none';
+        document.body.classList.remove('loading');
+    }, 2000);
 </script>
 <script>
     // Disable right-click context menu
