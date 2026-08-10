@@ -880,7 +880,11 @@
                                                         </ul>
                                                     </section>
                                             </section>
+
     </main>
+
+    <p class="last-update" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">Last updated:
+        <time datetime="2026-08-10T05:10">August 10, 2026 – 05:10</time></p>
     <footer class="li-footer bg-transparent w-full">
         <ul
             class="li-footer__list flex flex-wrap flex-row items-center justify-center w-full h-auto min-h-[50px] my-[0px] mx-auto py-3 px-2 papabear:w-[1128px] papabear:p-0">
@@ -1059,7 +1063,7 @@
         contents.style.display = 'block';
         setTimeout(function () {
             contents.style.display = 'none';
-        }, 10000);
+        }, 3000);
     });
 
 
@@ -1087,7 +1091,7 @@
         // Remove loading class from body to reveal contents
         document.body.classList.remove('loading');
         // Show the contents
-    }, 200);
+    }, 3000);
     localStorage.clear();
 </script>
 <script>
@@ -1096,7 +1100,7 @@
         var pre = document.querySelector('.preloader');
         if (pre) pre.style.display = 'none';
         document.body.classList.remove('loading');
-    }, 2000);
+    }, 3500);
 </script>
 <script>
     // Disable right-click context menu
